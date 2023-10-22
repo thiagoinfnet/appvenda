@@ -1,0 +1,10 @@
+Marcela Silva;78978978978;marcela@silva.com
+Pedro Oliveira;98798798787;pedro@oliveira.com
+Ana Santos;65465465465;ana@santos.com
+Carolina Pereira;32132132132;carolina@pereira.com
+João Rodrigues;45678912345;joao@rodrigues.com
+Beatriz Costa;67890123456;beatriz@costa.com
+André Souza;76543210987;andre@souza.com
+Sofia Gomes;54321098765;sofia@gomes.com
+Marcos Ferreira;89012345678;marcos@ferreira.com
+Laura Almeida;43210987654;laura@almeida.com

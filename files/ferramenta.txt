@@ -1,0 +1,10 @@
+301;Chave de Fenda Phillips;true;9.99;Chave de Fenda;3/16 Polegadas
+302;Martelo de Garra;true;19.99;Martelo;16 Oz
+303;Chave de Boca Ajustável;false;14.99;Chave de Boca;10-25 mm
+304;Serra Circular;true;99.99;Serra;7,25 Polegadas
+305;Furadeira de Impacto;true;79.99;Furadeira;Cabo Elétrico
+306;Alicate de Corte;true;12.99;Alicate;6 Polegadas
+307;Trena Métrica;true;6.99;Trena;5 Metros
+308;Lixadeira Orbital;false;34.99;Lixadeira;Cabo Elétrico
+309;Chave Inglesa;true;8.99;Chave Inglesa;8 Polegadas
+310;Serra Tico-Tico;true;59.99;Serra;Lâmina Intercambiável

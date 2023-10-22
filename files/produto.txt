@@ -1,0 +1,20 @@
+305;Furadeira de Impacto;true;79.99;Furadeira;Cabo Elétrico;F
+218;Lanterna de Sinalização;true;28;Rebel;26650;L
+216;Lanterna de Cabeça Potente;false;55;XHP35;14500;L
+213;Lanterna Recarregável Multifuncional;false;48;SST-40;14500;L
+302;Martelo de Garra;true;19.99;Martelo;16 Oz;F
+220;Lanterna de Emergência Compacta;true;37;Luxeon Rebel;18650;L
+310;Serra Tico-Tico;true;59.99;Serra;Lâmina Intercambiável;F
+214;Lanterna Tática Militar;true;80;219C;18650;L
+301;Chave de Fenda Phillips;true;9.99;Chave de Fenda;3/16 Polegadas;F
+219;Lanterna para Inspeção Profissional;false;63;LH351D;14500;L
+217;Lanterna para Camping;true;42;Oslon Square;18650;L
+307;Trena Métrica;true;6.99;Trena;5 Metros;F
+303;Chave de Boca Ajustável;false;14.99;Chave de Boca;10-25 mm;F
+211;Lanterna de Mergulho Profissional;true;75;XM-L2;18650;L
+215;Lanterna Compacta de Alumínio;true;36;Luxeon;14500;L
+304;Serra Circular;true;99.99;Serra;7,25 Polegadas;F
+308;Lixadeira Orbital;false;34.99;Lixadeira;Cabo Elétrico;F
+212;Lanterna de Caça Noturna;true;62;P9;26650;L
+306;Alicate de Corte;true;12.99;Alicate;6 Polegadas;F
+309;Chave Inglesa;true;8.99;Chave Inglesa;8 Polegadas;F

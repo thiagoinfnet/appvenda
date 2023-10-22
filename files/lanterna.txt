@@ -1,0 +1,9 @@
+222;Lanterna de Pesca Noturna;true;55;XM-L2;18650
+223;Lanterna de Emergência Portátil;true;32;SST-40;14500
+224;Lanterna para Trabalhos Noturnos;false;47;P9;14500
+225;Lanterna de Resgate Tática;true;74;Luxeon;18650
+226;Lanterna de Exploração Outdoor;true;83;XHP35;26650
+227;Lanterna de Caça Profissional;false;59;Oslon Square;14500
+228;Lanterna Resistente à Água;true;48;Rebel;18650
+229;Lanterna de Inspeção Industrial;true;52;LH351D;14500
+230;Lanterna Recarregável de Alta Potência;true;92;Luxeon Rebel;26650
