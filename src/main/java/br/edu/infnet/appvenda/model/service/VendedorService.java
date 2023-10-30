@@ -1,23 +1,47 @@
 package br.edu.infnet.appvenda.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.edu.infnet.appvenda.model.domain.Vendedor;
+import br.edu.infnet.appvenda.model.repository.VendedorRepository;
 
 @Service
 public class VendedorService {
 
-	private Map<String, Vendedor> mapaVendedor = new HashMap<String, Vendedor>();
+	@Autowired
+	private VendedorRepository vendedorRepository;
 
-	public void incluir(Vendedor vendedor) {
-		mapaVendedor.put(vendedor.getCpf(), vendedor);
+	@Transactional
+	public Vendedor incluir(Vendedor vendedor) {
+	    return vendedorRepository.save(vendedor);
 	}
 	
-	public Collection<Vendedor> obterLista(){	
-		return mapaVendedor.values();
-	}
+    public Collection<Vendedor> obterLista() {
+        return (Collection<Vendedor>) vendedorRepository.findAll();
+    }
+
+    public Vendedor obterPorId(Integer id) {
+        Optional<Vendedor> optionalVendedor = vendedorRepository.findById(id);
+        return optionalVendedor.orElse(null);
+    }
+
+    @Transactional
+    public Vendedor atualizar(Integer id, Vendedor novoVendedor) {
+        Optional<Vendedor> optionalVendedor = vendedorRepository.findById(id);
+        if (optionalVendedor.isPresent()) {
+            Vendedor vendedor = optionalVendedor.get();
+            return vendedorRepository.save(vendedor);
+        }
+        return null;
+    }
+
+    @Transactional
+    public void excluir(Integer id) {
+        vendedorRepository.deleteById(id);
+    }
 }

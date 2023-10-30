@@ -1,23 +1,27 @@
 package br.edu.infnet.appvenda.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appvenda.model.domain.Ferramenta;
+import br.edu.infnet.appvenda.model.repository.FerramentaRepository;
 
 @Service
 public class FerramentaService {
 
-	private Map<Integer, Ferramenta> mapaFerramenta = new HashMap<Integer, Ferramenta>();
-	
-	public void incluir(Ferramenta ferramenta) {
-		mapaFerramenta.put(ferramenta.getCodigo(), ferramenta);
+	@Autowired
+	private FerramentaRepository ferramentaRepository;
+
+	@Transactional
+	public Ferramenta incluir(Ferramenta ferramenta) {
+		return ferramentaRepository.save(ferramenta);
 	}
 	
-	public Collection<Ferramenta> obterLista() {
-		return mapaFerramenta.values();
+	public Collection<Ferramenta> obterLista(){	
+		return (Collection<Ferramenta>) ferramentaRepository.findAll();
 	}
 }
