@@ -1,22 +1,55 @@
 package br.edu.infnet.appvenda.model.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "TProduto")
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(
+		name = "TProduto",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = {"codigo"})
+        }
+)
 public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+    @Size(min = 5, max = 50, message = "Nome deve ter entre {​​min}​​ e {​​max}​​ caracteres")
 	private String descricao;
 	private int codigo;
 	private float preco;
 	private boolean estoque;
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@JoinColumn(name = "idVendedor")
+	private Vendedor vendedor;
 	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Vendedor getVendedor() {
+		return vendedor;
+	}
+
+	public void setVendedor(Vendedor vendedor) {
+		this.vendedor = vendedor;
+	}
+
 	@Override
 	public String toString() {
 		return String.format("%s - %d - %.2f - %s", descricao, codigo, preco, estoque);

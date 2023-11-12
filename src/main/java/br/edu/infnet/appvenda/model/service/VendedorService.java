@@ -29,7 +29,7 @@ public class VendedorService {
         Optional<Vendedor> optionalVendedor = vendedorRepository.findById(id);
         return optionalVendedor.orElse(null);
     }
-
+    
     @Transactional
     public Vendedor atualizar(Integer id, Vendedor novoVendedor) {
         Optional<Vendedor> optionalVendedor = vendedorRepository.findById(id);
