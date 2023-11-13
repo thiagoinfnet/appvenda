@@ -47,7 +47,7 @@ public class VendedorLoader implements ApplicationRunner {
 				vendedor.setNome(fields[0]);
 				vendedor.setCpf(fields[1]);
 				vendedor.setEmail(fields[2]);
-				Endereco endereco = enderecoService.buscarEndereco("21098-765");
+				Endereco endereco = enderecoService.buscarEndereco("20010-000");
 				vendedor.setEndereco(endereco);
 				
 				vendedorService.incluir(vendedor);

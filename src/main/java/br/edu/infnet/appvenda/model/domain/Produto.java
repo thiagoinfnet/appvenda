@@ -13,14 +13,18 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(
 		name = "TProduto",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = {"codigo"})
-        }
-)
+        })
+@JsonInclude(Include.NON_NULL)
 public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,8 +34,9 @@ public class Produto {
 	private int codigo;
 	private float preco;
 	private boolean estoque;
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "idVendedor")
+	@JsonBackReference
 	private Vendedor vendedor;
 	
 	public Integer getId() {

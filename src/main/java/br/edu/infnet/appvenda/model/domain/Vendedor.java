@@ -16,8 +16,13 @@ import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "TVendedor")
+@JsonInclude(Include.NON_NULL)
 public class Vendedor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,6 +39,7 @@ public class Vendedor {
 			orphanRemoval = true
 			)
 	@OrderBy("id")
+	@JsonManagedReference
 	private List<Produto> produtos;
 	
 	@OneToOne(
