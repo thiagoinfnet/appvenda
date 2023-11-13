@@ -24,4 +24,9 @@ public class LanternaService {
 	public Collection<Lanterna> obterLista(){	
 		return (Collection<Lanterna>) lanternaRepository.findAll();
 	}
+	
+	@Transactional
+	public void excluir(Integer id) {
+		lanternaRepository.deleteById(id);
+	}
 }

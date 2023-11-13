@@ -25,7 +25,7 @@ public class ProdutoController {
 	
     @GetMapping(value = "/")
     @ResponseBody
-    public Collection<Produto> telaLista() {
+    public Collection<Produto> lista() {
         return produtoService.obterLista();
     }
 
