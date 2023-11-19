@@ -48,6 +48,10 @@ public class ProdutoService {
 
 	@Transactional
 	public void excluir(Integer id) {
-		produtoRepository.deleteById(id);
+		produtoRepository.deleteByCodigo(id);
 	}
+	
+    public Long contar() {
+        return produtoRepository.count();
+    }
 }

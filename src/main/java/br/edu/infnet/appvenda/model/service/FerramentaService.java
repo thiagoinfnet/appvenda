@@ -24,4 +24,13 @@ public class FerramentaService {
 	public Collection<Ferramenta> obterLista(){	
 		return (Collection<Ferramenta>) ferramentaRepository.findAll();
 	}
+	
+	@Transactional
+	public void excluir(Integer id) {
+		ferramentaRepository.deleteByCodigo(id);
+	}
+	
+    public Long contar() {
+        return ferramentaRepository.count();
+    }
 }

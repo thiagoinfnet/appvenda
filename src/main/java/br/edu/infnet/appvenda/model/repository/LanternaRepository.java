@@ -7,5 +7,5 @@ import br.edu.infnet.appvenda.model.domain.Lanterna;
 
 @Repository
 public interface LanternaRepository extends CrudRepository<Lanterna, Integer> {
-
+	void deleteByCodigo(Integer codigo);
 }

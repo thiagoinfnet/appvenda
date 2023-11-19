@@ -44,4 +44,8 @@ public class VendedorService {
     public void excluir(Integer id) {
         vendedorRepository.deleteById(id);
     }
+    
+    public Long contar() {
+        return vendedorRepository.count();
+    }
 }

@@ -52,4 +52,10 @@ public class VendedorController {
     public void deletarVendedor(@PathVariable Integer id) {
         vendedorService.excluir(id);
     }
+    
+    @GetMapping("/count")
+    @ResponseBody
+    public Long contarVendedores() {
+        return vendedorService.contar();
+    }
 }

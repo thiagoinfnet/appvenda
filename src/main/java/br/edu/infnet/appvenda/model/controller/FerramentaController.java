@@ -10,31 +10,31 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import br.edu.infnet.appvenda.model.domain.Lanterna;
-import br.edu.infnet.appvenda.model.service.LanternaService;
+import br.edu.infnet.appvenda.model.domain.Ferramenta;
+import br.edu.infnet.appvenda.model.service.FerramentaService;
 
 @Controller
-@RequestMapping("/lanterna")
-public class LanternaController {
+@RequestMapping("/ferramenta")
+public class FerramentaController {
 
 	@Autowired
-	private LanternaService lanternaService;
+	private FerramentaService ferramentaService;
 	
 	@GetMapping(value = "/")
 	@ResponseBody
-	public Collection<Lanterna> lista() {
-		return lanternaService.obterLista();
+	public Collection<Ferramenta> lista() {
+		return ferramentaService.obterLista();
 	}
 	
     @DeleteMapping("/{id}")
     @ResponseBody
     public void deletarLanterna(@PathVariable Integer id) {
-    	lanternaService.excluir(id);
+    	ferramentaService.excluir(id);
     }
     
     @GetMapping("/count")
     @ResponseBody
     public Long contar() {
-        return lanternaService.contar();
+        return ferramentaService.contar();
     }
 }

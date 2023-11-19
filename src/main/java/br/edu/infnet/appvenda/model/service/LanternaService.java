@@ -27,6 +27,10 @@ public class LanternaService {
 	
 	@Transactional
 	public void excluir(Integer id) {
-		lanternaRepository.deleteById(id);
+		lanternaRepository.deleteByCodigo(id);
 	}
+	
+    public Long contar() {
+        return lanternaRepository.count();
+    }
 }
