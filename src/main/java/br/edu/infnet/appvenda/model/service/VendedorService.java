@@ -35,6 +35,11 @@ public class VendedorService {
         Optional<Vendedor> optionalVendedor = vendedorRepository.findById(id);
         if (optionalVendedor.isPresent()) {
             Vendedor vendedor = optionalVendedor.get();
+            vendedor.setCpf(novoVendedor.getCpf());
+            vendedor.setEmail(novoVendedor.getEmail());
+            vendedor.setEndereco(novoVendedor.getEndereco());
+            vendedor.setNome(novoVendedor.getNome());
+            vendedor.setProdutos(novoVendedor.getProdutos());
             return vendedorRepository.save(vendedor);
         }
         return null;

@@ -37,10 +37,14 @@ public class ProdutoService {
     }
 
 	@Transactional
-	public Produto atualizar(Integer id, Produto novoVendedor) {
+	public Produto atualizar(Integer id, Produto novoProduto) {
 		Optional<Produto> optionalProduto = produtoRepository.findById(id);
 		if (optionalProduto.isPresent()) {
 			Produto produto = optionalProduto.get();
+			produto.setDescricao(novoProduto.getDescricao());
+			produto.setEstoque(novoProduto.isEstoque());
+			produto.setVendedor(novoProduto.getVendedor());
+			produto.setPreco(novoProduto.getPreco());
 			return produtoRepository.save(produto);
 		}
 		return null;
